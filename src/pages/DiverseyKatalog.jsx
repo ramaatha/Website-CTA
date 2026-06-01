@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { diverseyProducts } from "../data/products";
+import diverseyImages from "../data/diverseyImages";
 import useCartStore from "../store/cartStore";
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
@@ -32,32 +33,32 @@ function formatRupiah(n) {
   }).format(n);
 }
 
-function ProductImage({ id, name, className = "" }) {
+function ProductImage({ src, name }) {
   const [error, setError] = useState(false);
 
-  if (error) {
-    return (
-      <div className={`w-full h-full flex flex-col items-center justify-center gap-1.5 ${className}`}>
-        <svg
-          className="w-9 h-9 stroke-border"
-          viewBox="0 0 24 24"
-          fill="none"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
-        <span className="text-[10px] text-text-tertiary">Foto segera hadir</span>
-      </div>
-    );
-  }
+  const placeholder = (
+    <div className="w-full h-full flex flex-col items-center justify-center gap-1.5">
+      <svg
+        className="w-9 h-9 stroke-border"
+        viewBox="0 0 24 24"
+        fill="none"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+      <span className="text-[10px] text-text-tertiary">Foto segera hadir</span>
+    </div>
+  );
+
+  if (!src || error) return placeholder;
 
   return (
     <img
-      src={`/images/products/${id}.jpg`}
+      src={src}
       alt={name}
       onError={() => setError(true)}
       className="w-full h-full object-contain p-5 transition-transform duration-[400ms] group-hover:scale-110"
@@ -67,6 +68,8 @@ function ProductImage({ id, name, className = "" }) {
 
 function ProductCard({ product, onViewDetail, onAddToCart }) {
   const cat = CAT_META[product.category] || CAT_META.housekeeping;
+  const imgFile = diverseyImages[product.id];
+  const imgSrc = imgFile ? `/images/products/${imgFile}` : null;
 
   return (
     <div
@@ -75,7 +78,7 @@ function ProductCard({ product, onViewDetail, onAddToCart }) {
     >
       {/* Image */}
       <div className="relative w-full h-[200px] bg-[#f8f9fb] overflow-hidden max-sm:h-[150px]">
-        <ProductImage id={product.id} name={product.name} />
+        <ProductImage src={imgSrc} name={product.name} />
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-primary/75 flex flex-col items-center justify-center gap-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -147,6 +150,8 @@ function ProductCard({ product, onViewDetail, onAddToCart }) {
 
 function ProductModal({ product, onClose, onAddToCart }) {
   const cat = CAT_META[product.category] || CAT_META.housekeeping;
+  const imgFile = diverseyImages[product.id];
+  const imgSrc = imgFile ? `/images/products/${imgFile}` : null;
 
   useEffect(() => {
     const onKey = (e) => {
@@ -193,7 +198,7 @@ function ProductModal({ product, onClose, onAddToCart }) {
 
         {/* Image */}
         <div className="w-full h-[240px] bg-[#f8f9fb] overflow-hidden flex items-center justify-center">
-          <ProductImage id={product.id} name={product.name} />
+          <ProductImage src={imgSrc} name={product.name} />
         </div>
 
         {/* Content */}
