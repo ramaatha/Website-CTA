@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import TopBar from "./components/TopBar";
 import Hero from "./components/Hero";
 import Brands from "./components/Brands";
+import BuyDirect from "./components/BuyDirect";
 import Estimasi from "./components/Estimasi";
 import Footer from "./components/Footer";
 import FloatingEstimasi from "./components/FloatingEstimasi";
@@ -14,6 +15,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Brands />
+      <BuyDirect />
       <Estimasi />
       <Footer />
       <FloatingEstimasi />
