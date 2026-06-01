@@ -67,8 +67,13 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/[0.08] flex justify-between items-center text-[13px] text-white/40 flex-wrap gap-3">
-          <span>&copy; 2026 PT Cipta Teknologi Aplikasi. All rights reserved.</span>
-          <a href="#" className="text-white/50 no-underline hover:text-white/80 transition-colors duration-[250ms]">
+          <span>
+            &copy; 2026 PT Cipta Teknologi Aplikasi. All rights reserved.
+          </span>
+          <a
+            href="#"
+            className="text-white/50 no-underline hover:text-white/80 transition-colors duration-[250ms]"
+          >
             Privacy Policy
           </a>
         </div>

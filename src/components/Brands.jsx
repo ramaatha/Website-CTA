@@ -96,8 +96,12 @@ export default function Brands() {
   return (
     <section className="py-[72px] bg-surface" id="brands">
       <div className="container">
-        <div className="font-heading text-[12px] font-bold uppercase tracking-[1.5px] text-accent mb-3">Brand partner</div>
-        <h2 className="[font-size:clamp(24px,3.5vw,36px)] font-extrabold text-text mb-3 tracking-[-0.3px]">Pilih brand unggulan Anda</h2>
+        <div className="font-heading text-[12px] font-bold uppercase tracking-[1.5px] text-accent mb-3">
+          Brand partner
+        </div>
+        <h2 className="[font-size:clamp(24px,3.5vw,36px)] font-extrabold text-text mb-3 tracking-[-0.3px]">
+          Pilih brand unggulan Anda
+        </h2>
         <p className="text-[16px] text-text-secondary max-w-[520px] mb-12">
           Tiga merek terpercaya dalam industri chemical cleaning profesional.
           Klik untuk melihat katalog lengkap.

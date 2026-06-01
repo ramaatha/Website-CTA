@@ -1,7 +1,9 @@
 export default function FloatingEstimasi() {
   const handleClick = (e) => {
     e.preventDefault();
-    document.getElementById("estimasi-section")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("estimasi-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -13,8 +15,20 @@ export default function FloatingEstimasi() {
       style={{ animation: "floatPulse 2.5s ease-in-out infinite" }}
     >
       <span className="whitespace-nowrap">Hitung Estimasi Biaya</span>
-      <span className="flex" style={{ animation: "bounceArrow 1.5s ease-in-out infinite" }}>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <span
+        className="flex"
+        style={{ animation: "bounceArrow 1.5s ease-in-out infinite" }}
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M7 10l5 5 5-5" />
         </svg>
       </span>

@@ -8,62 +8,56 @@ WA: 6281283022552 | Deployed: Vercel | Branch aktif: development
 
 ## Status Migrasi
 
-Fase 1 (current): Static HTML/CSS/JS — SUDAH JALAN di Vercel
-Fase 1.5 (in progress): Migrasi ke React + Vite
+Fase 1 (done): Static HTML/CSS/JS — masih live di Vercel (branch main)
+Fase 1.5 (in progress): Migrasi ke React + Vite (branch development)
 Fase 2 (future): Tambah backend Node.js/Express/PostgreSQL
 
-File static lama tetap ada sebagai referensi konten & layout.
-Jangan hapus file HTML lama sampai React version selesai.
+React version sudah berjalan di localhost:7000.
+Build clean, semua homepage components fully migrated.
 
-## Tech Stack Target
+## Yang Sudah Selesai (React)
+
+- Scaffold Vite + React + Tailwind CSS v4 + React Router v6
+- Navbar, TopBar, Footer, WAFloat, EstimasiFloat (global components)
+- Home page — semua sections selesai
+- src/data/products.js dan wilayah.js (ES modules)
+
+## Yang Belum Selesai
+
+- React Router setup + route definitions
+- About page
+- Contact page
+- Estimasi page (cascading dropdown, kalkulasi, WA checkout)
+- Katalog Diversey (76 produk, 5 category tabs)
+- Katalog Godrej (pending)
+- Katalog Prima (pending)
+
+## Sisa File Static (belum dihapus, masih dibutuhkan sebagai referensi)
+
+- css/global.css dan css/responsive.css
+- js/navbar.js (masih dipakai about.html dan contact.html)
+- about.html dan contact.html (referensi layout untuk migrasi)
+
+## Tech Stack
 
 - React + Vite
-- Tailwind CSS (replace CSS files lama)
+- Tailwind CSS v4
 - React Router v6
 - Framer Motion (animasi)
 - Zustand (state: cart, estimasi)
 - shadcn/ui (UI components)
 - Dayjs (replace moment.js)
 
-## Folder Structure Target
+## Folder Structure
 
 src/
 ├── components/ → Navbar, Footer, TopBar, WAFloat, EstimasiFloat
-├── pages/ → Home, About, Contact, Estimasi, DiverseyKatalog, dll
+├── pages/ → Home (done), About, Contact, Estimasi, DiverseyKatalog
 ├── data/ → products.js, wilayah.js (ES modules)
 ├── store/ → cartStore.js (Zustand)
-└── assets/ → pindahan dari /images dan /fonts
+└── assets/ → images dan fonts
 
-## Existing File Structure (Static)
-
-├── index.html
-├── about.html
-├── contact.html
-├── estimasi.html
-├── brands/
-│ ├── diversey.html → 76 produk real, 5 category tabs
-│ ├── godrej.html
-│ └── prima.html
-├── css/
-│ ├── global.css → design tokens utama
-│ ├── navbar.css
-│ ├── hero.css
-│ ├── cards.css
-│ ├── brands.css
-│ ├── estimasi.css
-│ └── responsive.css
-├── images/
-│ ├── brands/
-│ │ ├── diversey.webp
-│ │ └── godrej.jpg
-│ └── ecommerce/ → logo Tokopedia, Shopee, TikTok
-└── js/
-├── data/
-│ ├── products.js → 76 produk Diversey (global var, perlu convert)
-│ └── wilayah.js → data provinsi/kota/kecamatan/kelurahan
-└── navbar.js
-
-## Design Tokens (dari global.css — WAJIB dipakai konsisten)
+## Design Tokens
 
 Primary: #0B3D6B
 Primary light: #1565A0
@@ -96,11 +90,12 @@ Transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1)
 
 ## Fitur Utama Per Halaman
 
-Home → Hero section, brand showcase, floating estimasi CTA
+Home → Hero section, brand showcase, marketplace comparison,
+estimasi CTA banner (SELESAI)
 About → Company profile, value cards grid, sidebar info
 Contact → Contact cards + form + map placeholder
 Estimasi → Cascading dropdown Provinsi→Kota→Kecamatan→Kelurahan,
-kalkulasi live harga + ongkir, WA checkout message
+kalkulasi live harga + ongkir, WA checkout message,
 Gratis ongkir: DKI Jakarta & Bandung
 Diversey → Product grid, 5 category tabs, 76 produk real,
 hover overlay (Lihat Detail + Tambah Keranjang),
