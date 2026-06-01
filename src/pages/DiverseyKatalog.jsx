@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { diverseyProducts } from "../data/products";
 import diverseyImages from "../data/diverseyImages";
 import useCartStore from "../store/cartStore";
@@ -6,7 +7,6 @@ import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
-import FloatingEstimasi from "../components/FloatingEstimasi";
 
 const CATEGORIES = [
   { key: "all", label: "Semua" },
@@ -130,7 +130,9 @@ function ProductCard({ product, onViewDetail, onAddToCart }) {
 
       {/* Body */}
       <div className="p-4 max-sm:p-3">
-        <span className={`inline-block px-2 py-0.5 rounded-[4px] text-[10px] font-semibold uppercase tracking-[0.5px] mb-2 ${cat.cls}`}>
+        <span
+          className={`inline-block px-2 py-0.5 rounded-[4px] text-[10px] font-semibold uppercase tracking-[0.5px] mb-2 ${cat.cls}`}
+        >
           {cat.label}
         </span>
         <div className="text-[11px] text-text-tertiary font-heading mb-1">
@@ -139,7 +141,9 @@ function ProductCard({ product, onViewDetail, onAddToCart }) {
         <div className="text-[14px] font-semibold text-text leading-[1.4] mb-2 line-clamp-2">
           {product.name}
         </div>
-        <div className="text-[12px] text-text-tertiary mb-2">{product.unit}</div>
+        <div className="text-[12px] text-text-tertiary mb-2">
+          {product.unit}
+        </div>
         <div className="font-heading text-[18px] font-extrabold text-primary max-sm:text-[15px]">
           {formatRupiah(product.price)}
         </div>
@@ -203,7 +207,9 @@ function ProductModal({ product, onClose, onAddToCart }) {
 
         {/* Content */}
         <div className="p-6">
-          <span className={`inline-block px-2.5 py-1 rounded-[4px] text-[10px] font-semibold uppercase tracking-[0.5px] mb-3 ${cat.cls}`}>
+          <span
+            className={`inline-block px-2.5 py-1 rounded-[4px] text-[10px] font-semibold uppercase tracking-[0.5px] mb-3 ${cat.cls}`}
+          >
             {cat.label}
           </span>
           <h2 className="font-heading text-[20px] font-bold text-text leading-tight mb-1">
@@ -290,16 +296,14 @@ export default function DiverseyKatalog() {
 
   const addItem = useCartStore((s) => s.addItem);
   const totalItems = useCartStore((s) =>
-    s.items.reduce((sum, i) => sum + i.qty, 0)
+    s.items.reduce((sum, i) => sum + i.qty, 0),
   );
 
   const filtered = diverseyProducts.filter((p) => {
     const matchCat = activeCategory === "all" || p.category === activeCategory;
     const q = searchQuery.toLowerCase();
     const matchSearch =
-      !q ||
-      p.name.toLowerCase().includes(q) ||
-      p.sku.toLowerCase().includes(q);
+      !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
 
@@ -319,7 +323,12 @@ export default function DiverseyKatalog() {
       <Navbar />
 
       {/* ── Brand Hero ── */}
-      <section className="relative bg-gradient-to-br from-[#0a1628] to-[#0b3d6b] py-12 overflow-hidden">
+      <section
+        className="relative py-12 overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0a1628 0%, #0b3d6b 100%)",
+        }}
+      >
         <div
           className="absolute -top-[40%] -right-[10%] w-[400px] h-[400px] rounded-full pointer-events-none"
           style={{
@@ -337,9 +346,9 @@ export default function DiverseyKatalog() {
           </div>
           <div>
             <div className="flex items-center gap-1.5 text-[13px] text-white/50 mb-3 max-md:justify-center">
-              <a href="/" className="hover:text-white/80 transition-colors">
+              <Link to="/" className="hover:text-white/80 transition-colors">
                 Home
-              </a>
+              </Link>
               <span>›</span>
               <span className="text-white/80">Diversey</span>
             </div>
@@ -425,8 +434,11 @@ export default function DiverseyKatalog() {
               </p>
             </div>
           ) : (
-            <div className="grid gap-5 max-md:gap-3 max-sm:gap-2.5"
-              style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}
+            <div
+              className="grid gap-5 max-md:gap-3 max-sm:gap-2.5"
+              style={{
+                gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              }}
             >
               {filtered.map((p) => (
                 <ProductCard
@@ -443,7 +455,6 @@ export default function DiverseyKatalog() {
 
       <Footer />
       <FloatingWhatsApp />
-      <FloatingEstimasi />
 
       {/* ── Floating Cart ── */}
       {totalItems > 0 && (

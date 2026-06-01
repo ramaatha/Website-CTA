@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
+// internal: true → pakai <Link> (React Router, no page reload)
+// internal: false → pakai <a href> (still static HTML)
 const links = [
-  { label: "Home", href: "/" },
-  { label: "Diversey", href: "/diversey" },
-  { label: "Godrej", href: "/brands/godrej.html" },
-  { label: "Prima", href: "/brands/prima.html" },
-  { label: "About Us", href: "/about.html" },
+  { label: "Home", to: "/", internal: true },
+  { label: "Diversey", to: "/diversey", internal: true },
+  { label: "Godrej", href: "/brands/godrej.html", internal: false },
+  { label: "Prima", href: "/brands/prima.html", internal: false },
+  { label: "About Us", to: "/about", internal: true },
 ];
+
+const linkClass =
+  "px-4 py-2 rounded-[6px] text-sm font-medium text-text-secondary no-underline transition-all duration-[250ms] hover:bg-primary-50 hover:text-primary max-md:px-5 max-md:py-3 max-md:rounded-none max-md:w-full";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,17 +28,17 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-[100] bg-surface border-b border-border">
       <div className="container flex justify-between items-center h-[68px] max-md:h-[60px]">
-        <a
-          href="/"
-          className="flex items-center gap-2.5 font-heading font-extrabold text-xl text-primary no-underline"
+        <Link
+          to="/"
+          className="nav-logo-link font-heading font-extrabold text-xl text-primary no-underline"
         >
           <img
             src="/images/logo/cta-logo.png"
             alt="CTA"
-            className="h-8 w-auto object-contain"
+            className="nav-logo-img object-contain"
           />
           CTA Cleaning
-        </a>
+        </Link>
 
         {/* Hamburger — mobile only */}
         <button
@@ -56,18 +62,30 @@ export default function Navbar() {
             isOpen ? "max-md:max-h-[500px]" : "max-md:max-h-0",
           ].join(" ")}
         >
-          {links.map(({ label, href }) => (
+          {links.map(({ label, to, href, internal }) => (
             <li
               key={label}
               className="flex max-md:w-full max-md:border-b max-md:border-border-light"
             >
-              <a
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-[6px] text-sm font-medium text-text-secondary no-underline transition-all duration-[250ms] hover:bg-primary-50 hover:text-primary max-md:px-5 max-md:py-3 max-md:rounded-none max-md:w-full"
-              >
-                {label}
-              </a>
+              {internal ? (
+                <NavLink
+                  to={to}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    linkClass + (isActive ? " text-primary bg-primary-50" : "")
+                  }
+                >
+                  {label}
+                </NavLink>
+              ) : (
+                <a
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className={linkClass}
+                >
+                  {label}
+                </a>
+              )}
             </li>
           ))}
           <li className="flex max-md:w-full max-md:border-b max-md:border-border-light max-md:p-3">

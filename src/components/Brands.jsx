@@ -1,11 +1,11 @@
 const brands = [
   {
-    href: "/brands/diversey.html",
+    to: "/diversey",
     image: "/images/brands/diversey.webp",
     title: "Diversey",
     description:
       "Solusi kebersihan dan higienitas profesional untuk industri perhotelan, kesehatan, dan perkantoran.",
-    count: "20+",
+    count: "50+",
     logoBg: "#fff",
   },
   {
@@ -28,8 +28,11 @@ const brands = [
   },
 ];
 
+import { Link } from "react-router-dom";
+
 function BrandCard({
   href,
+  to,
   image,
   title,
   description,
@@ -37,9 +40,11 @@ function BrandCard({
   logoBg,
   logoColor,
 }) {
+  const Wrapper = to ? Link : "a";
+  const wrapperProps = to ? { to } : { href };
   return (
-    <a
-      href={href}
+    <Wrapper
+      {...wrapperProps}
       className="group relative flex flex-col bg-surface border-[1.5px] border-border rounded-[16px] p-8 text-center no-underline text-text overflow-hidden transition-all duration-[250ms] hover:border-primary hover:shadow-md hover:-translate-y-1"
     >
       {/* Arrow — visible on hover */}
@@ -88,7 +93,7 @@ function BrandCard({
         <strong className="text-primary font-semibold">{count}</strong> produk
         tersedia
       </div>
-    </a>
+    </Wrapper>
   );
 }
 

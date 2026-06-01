@@ -31,12 +31,16 @@ export default function BuyDirect() {
       <div className="container">
         {/* promo-box: 2-col, salmon/peach bg */}
         <div className="grid grid-cols-2 gap-10 bg-warning-light rounded-[24px] p-12 max-md:grid-cols-1 max-md:p-8 max-sm:p-6">
-
           {/* Left column */}
           <div>
             {/* promo-tag */}
             <div className="inline-flex items-center gap-1.5 mb-5 px-3 py-1.5 rounded-full text-[12px] font-bold text-warning bg-[rgba(212,81,30,0.1)]">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
               Hemat lebih banyak
@@ -48,27 +52,41 @@ export default function BuyDirect() {
 
             <p className="text-[15px] text-text-secondary leading-[1.7] mb-6">
               Pembelian langsung melalui website atau WhatsApp kami mendapatkan{" "}
-              <strong className="text-text font-semibold">harga yang lebih rendah</strong> dibandingkan marketplace.
-              Ini dikarenakan pembelian melalui Tokopedia, Shopee, dan TikTok Shop dikenakan pajak aplikator e-commerce
-              yang membuat harga jual lebih tinggi.
+              <strong className="text-text font-semibold">
+                harga yang lebih rendah
+              </strong>{" "}
+              dibandingkan marketplace. Ini dikarenakan pembelian melalui
+              Tokopedia, Shopee, dan TikTok Shop dikenakan pajak aplikator
+              e-commerce yang membuat harga jual lebih tinggi.
             </p>
 
             {/* promo-savings */}
             <div className="flex items-center gap-3 bg-white rounded-[10px] px-4 py-3.5 text-sm text-text">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-warning)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--color-warning)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="shrink-0"
+              >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v4l2 2" />
               </svg>
               <span>
                 Pembayaran langsung &amp; cash ={" "}
-                <strong className="font-semibold text-text">harga terbaik</strong>
+                <strong className="font-semibold text-text">
+                  harga terbaik
+                </strong>
               </span>
             </div>
           </div>
 
           {/* Right column — ecom-grid */}
           <div className="flex flex-col gap-3">
-
             {/* WhatsApp — highlighted */}
             <a
               href="https://wa.me/6281283022552"
@@ -82,10 +100,17 @@ export default function BuyDirect() {
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-[14px] text-text">WhatsApp Admin</div>
-                <div className="text-[12px] text-text-secondary">Chat langsung, harga terbaik</div>
+                <div className="font-semibold text-[14px] text-text">
+                  WhatsApp Admin
+                </div>
+                <div className="text-[12px] text-text-secondary">
+                  Chat langsung, harga terbaik
+                </div>
               </div>
-              <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ background: "#e6f7f0", color: "#0f8a4f" }}>
+              <span
+                className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0"
+                style={{ background: "#e6f7f0", color: "#0f8a4f" }}
+              >
                 Termurah
               </span>
             </a>
@@ -100,15 +125,24 @@ export default function BuyDirect() {
                 className="flex items-center gap-3 bg-white border border-border rounded-[12px] px-4 py-3.5 no-underline transition-all duration-[250ms] hover:border-primary/30 hover:shadow-[0_2px_8px_rgba(11,61,107,0.08)] hover:-translate-y-px"
               >
                 <div className="w-10 h-10 rounded-[10px] bg-white border border-border-light flex items-center justify-center shrink-0 p-1">
-                  <img src={img} alt={alt} style={{ width: imgSize, height: imgSize, objectFit: "contain" }} />
+                  <img
+                    src={img}
+                    alt={alt}
+                    style={{
+                      width: imgSize,
+                      height: imgSize,
+                      objectFit: "contain",
+                    }}
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-[14px] text-text">{name}</div>
+                  <div className="font-semibold text-[14px] text-text">
+                    {name}
+                  </div>
                   <div className="text-[12px] text-text-secondary">{note}</div>
                 </div>
               </a>
             ))}
-
           </div>
         </div>
       </div>

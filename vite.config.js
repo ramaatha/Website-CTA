@@ -13,8 +13,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "/index.html",
-        about: "/about.html",
-        contact: "/contact.html",
         estimasi: "/estimasi.html",
       },
     },

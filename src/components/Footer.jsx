@@ -1,29 +1,36 @@
+import { Link } from "react-router-dom";
+
+// internal: true → <Link> (React Router)
+// internal: false → <a href> (masih static/external)
 const footerLinks = [
   {
     heading: "Brand",
     links: [
-      { label: "Diversey", href: "/brands/diversey.html" },
-      { label: "Godrej", href: "/brands/godrej.html" },
-      { label: "Prima", href: "/brands/prima.html" },
+      { label: "Diversey", to: "/diversey", internal: true },
+      { label: "Godrej", href: "/brands/godrej.html", internal: false },
+      { label: "Prima", href: "/brands/prima.html", internal: false },
     ],
   },
   {
     heading: "Halaman",
     links: [
-      { label: "Estimasi Biaya", href: "/estimasi.html" },
-      { label: "About Us", href: "/about.html" },
-      { label: "Kontak", href: "/contact.html" },
+      { label: "Estimasi Biaya", href: "/estimasi.html", internal: false },
+      { label: "About Us", to: "/about", internal: true },
+      { label: "Kontak", to: "/contact", internal: true },
     ],
   },
   {
     heading: "Marketplace",
     links: [
-      { label: "Tokopedia", href: "#" },
-      { label: "Shopee", href: "#" },
-      { label: "TikTok Shop", href: "#" },
+      { label: "Tokopedia", href: "#", internal: false },
+      { label: "Shopee", href: "#", internal: false },
+      { label: "TikTok Shop", href: "#", internal: false },
     ],
   },
 ];
+
+const linkClass =
+  "text-sm text-white/60 no-underline transition-colors duration-[250ms] hover:text-white";
 
 export default function Footer() {
   return (
@@ -51,14 +58,17 @@ export default function Footer() {
                 {heading}
               </h4>
               <ul className="list-none p-0 m-0">
-                {links.map(({ label, href }) => (
+                {links.map(({ label, to, href, internal }) => (
                   <li key={label} className="mb-2.5">
-                    <a
-                      href={href}
-                      className="text-sm text-white/60 no-underline transition-colors duration-[250ms] hover:text-white"
-                    >
-                      {label}
-                    </a>
+                    {internal ? (
+                      <Link to={to} className={linkClass}>
+                        {label}
+                      </Link>
+                    ) : (
+                      <a href={href} className={linkClass}>
+                        {label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
