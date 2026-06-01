@@ -1,0 +1,77 @@
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .value-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 32px 0;
+  }
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+  .hero {
+    padding: 60px 0 80px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero-sub {
+    font-size: 14px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-stats {
+    gap: 16px;
+    padding-top: 24px;
+  }
+  .float-estimasi {
+    left: 16px;
+    bottom: 80px;
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+}
