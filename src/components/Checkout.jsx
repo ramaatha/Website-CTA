@@ -1,6 +1,6 @@
 const marketplaces = [
   {
-    href: "#",
+    href: "https://www.tokopedia.com/diversey",
     img: "/images/ecommerce/tokopedia.png",
     alt: "Tokopedia",
     name: "Tokopedia",
@@ -8,7 +8,7 @@ const marketplaces = [
     imgSize: 40,
   },
   {
-    href: "#",
+    href: "https://shopee.co.id/ciptateknologiaplikasi?categoryId=100636&entryPoint=ShopByPDP&itemId=29115473205&upstream=search",
     img: "/images/ecommerce/shopee.png",
     alt: "Shopee",
     name: "Shopee",
@@ -25,7 +25,7 @@ const marketplaces = [
   },
 ];
 
-export default function BuyDirect() {
+export default function Checkout() {
   return (
     <section className="py-[72px] bg-surface">
       <div className="container">

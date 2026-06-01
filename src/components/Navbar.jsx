@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 
 // internal: true → pakai <Link> (React Router, no page reload)
 // internal: false → pakai <a href> (still static HTML)

@@ -28,7 +28,7 @@ const brands = [
   },
 ];
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 function BrandCard({
   href,

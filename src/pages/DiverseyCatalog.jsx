@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { diverseyProducts } from "../data/products";
 import diverseyImages from "../data/diverseyImages";
 import useCartStore from "../store/cartStore";

@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
-import DiverseyKatalog from "./pages/DiverseyKatalog";
+import DiverseyKatalog from "./pages/DiverseyCatalog";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 // internal: true → <Link> (React Router)
 // internal: false → <a href> (masih static/external)
@@ -22,8 +22,8 @@ const footerLinks = [
   {
     heading: "Marketplace",
     links: [
-      { label: "Tokopedia", href: "#", internal: false },
-      { label: "Shopee", href: "#", internal: false },
+      { label: "Tokopedia", href: "https://www.tokopedia.com/diversey", internal: false },
+      { label: "Shopee", href: "https://shopee.co.id/ciptateknologiaplikasi?categoryId=100636&entryPoint=ShopByPDP&itemId=29115473205&upstream=search", internal: false },
       { label: "TikTok Shop", href: "#", internal: false },
     ],
   },

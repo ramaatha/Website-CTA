@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -67,7 +67,14 @@ const contactCards = [
   },
 ];
 
-const marketplaces = ["Tokopedia", "Shopee", "TikTok Shop"];
+const marketplaces = [
+  { label: "Tokopedia", href: "https://www.tokopedia.com/diversey" },
+  {
+    label: "Shopee",
+    href: "https://shopee.co.id/ciptateknologiaplikasi?categoryId=100636&entryPoint=ShopByPDP&itemId=29115473205&upstream=search",
+  },
+  { label: "TikTok Shop", href: "#" },
+];
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -309,13 +316,15 @@ export default function ContactPage() {
               aplikator).
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
-              {marketplaces.map((mp) => (
+              {marketplaces.map(({ label, href }) => (
                 <a
-                  key={mp}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
                   className="px-5 py-2.5 rounded-[10px] border border-border text-[13px] font-semibold text-text no-underline transition-all hover:border-primary hover:text-primary hover:bg-primary-50"
                 >
-                  {mp}
+                  {label}
                 </a>
               ))}
             </div>
