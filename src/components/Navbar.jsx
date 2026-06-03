@@ -89,13 +89,13 @@ export default function Navbar() {
             </li>
           ))}
           <li className="flex max-md:w-full max-md:border-b max-md:border-border-light max-md:p-3">
-            <a
-              href="/estimasi.html"
+            <Link
+              to="/estimasi"
               onClick={() => setIsOpen(false)}
               className="px-5 py-2.5 rounded-[10px] text-sm font-semibold bg-primary text-white no-underline transition-all duration-[250ms] hover:bg-primary-light"
             >
               Estimasi Biaya
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

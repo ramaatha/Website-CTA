@@ -5,7 +5,6 @@ import Brands from "../components/Brands";
 import Checkout from "../components/Checkout";
 import Estimasi from "../components/Estimasi";
 import Footer from "../components/Footer";
-import FloatingEstimasi from "../components/FloatingEstimasi";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <Checkout />
       <Estimasi />
       <Footer />
-      <FloatingEstimasi />
       <FloatingWhatsApp />
     </>
   );

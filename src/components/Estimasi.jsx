@@ -58,7 +58,7 @@ export default function Estimasi() {
             </div>
 
             <a
-              href="/estimasi.html"
+              href="/estimasi"
               className="inline-flex items-center gap-2 px-9 py-4 rounded-[10px] font-heading text-[16px] font-semibold bg-accent text-white no-underline transition-all duration-[250ms] hover:bg-[#009B62] hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,168,107,0.3)]"
             >
               Buka Kalkulator Estimasi

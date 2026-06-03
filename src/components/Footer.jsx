@@ -14,7 +14,7 @@ const footerLinks = [
   {
     heading: "Halaman",
     links: [
-      { label: "Estimasi Biaya", href: "/estimasi.html", internal: false },
+      { label: "Estimasi Biaya", to: "/estimasi", internal: true },
       { label: "About Us", to: "/about", internal: true },
       { label: "Kontak", to: "/contact", internal: true },
     ],
@@ -22,8 +22,16 @@ const footerLinks = [
   {
     heading: "Marketplace",
     links: [
-      { label: "Tokopedia", href: "https://www.tokopedia.com/diversey", internal: false },
-      { label: "Shopee", href: "https://shopee.co.id/ciptateknologiaplikasi?categoryId=100636&entryPoint=ShopByPDP&itemId=29115473205&upstream=search", internal: false },
+      {
+        label: "Tokopedia",
+        href: "https://www.tokopedia.com/diversey",
+        internal: false,
+      },
+      {
+        label: "Shopee",
+        href: "https://shopee.co.id/ciptateknologiaplikasi?categoryId=100636&entryPoint=ShopByPDP&itemId=29115473205&upstream=search",
+        internal: false,
+      },
       { label: "TikTok Shop", href: "#", internal: false },
     ],
   },

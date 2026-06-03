@@ -54,7 +54,7 @@ export default function Hero() {
         {/* Actions */}
         <div className="flex gap-3 flex-wrap">
           <a
-            href="/estimasi.html"
+            href="/estimasi"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] font-heading text-[15px] font-semibold bg-accent text-white no-underline transition-all duration-[250ms] hover:bg-[#009B62] hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,168,107,0.3)]"
           >
             Estimasi Biaya
