@@ -89,13 +89,19 @@ export default function Navbar() {
             </li>
           ))}
           <li className="flex max-md:w-full max-md:border-b max-md:border-border-light max-md:p-3">
-            <Link
+            <NavLink
               to="/estimasi"
               onClick={() => setIsOpen(false)}
-              className="px-5 py-2.5 rounded-[10px] text-sm font-semibold bg-primary text-white no-underline transition-all duration-[250ms] hover:bg-primary-light"
+              className={({ isActive }) =>
+                `px-5 py-2.5 rounded-[10px] text-sm font-semibold no-underline transition-all duration-[250ms] ${
+                  isActive
+                    ? "bg-primary-light text-white ring-2 ring-primary/30"
+                    : "bg-primary text-white hover:bg-primary-light"
+                }`
+              }
             >
               Estimasi Biaya
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
