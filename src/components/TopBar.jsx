@@ -1,11 +1,14 @@
 export default function TopBar() {
   return (
-    <div className="topbar">
-      <div className="container">
-        <span className="topbar-hours">
+    <div className="bg-primary text-white text-[13px] py-2">
+      <div className="container flex justify-between items-center flex-wrap gap-2">
+        <span className="opacity-[0.85]">
           Senin – Sabtu &nbsp;·&nbsp; 07:00 – 20:00 WIB
         </span>
-        <a href="tel:+6281283022552" className="topbar-phone">
+        <a
+          href="tel:+6281283022552"
+          className="flex items-center gap-1.5 font-semibold tracking-[0.3px] text-white no-underline"
+        >
           <svg
             width="14"
             height="14"

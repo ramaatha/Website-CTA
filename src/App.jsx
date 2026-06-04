@@ -1,23 +1,20 @@
-import Navbar from "./components/Navbar";
-import TopBar from "./components/TopBar";
-import Hero from "./components/Hero";
-import Brands from "./components/Brands";
-import Estimasi from "./components/Estimasi";
-import Footer from "./components/Footer";
-import FloatingEstimasi from "./components/FloatingEstimasi";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import { Routes, Route } from "react-router";
+import HomePage from "./pages/HomePage";
+import DiverseyKatalog from "./pages/DiverseyCatalog";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import EstimasiPage from "./pages/EstimasiPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
-    <>
-      <TopBar />
-      <Navbar />
-      <Hero />
-      <Brands />
-      <Estimasi />
-      <Footer />
-      <FloatingEstimasi />
-      <FloatingWhatsApp />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/diversey" element={<DiverseyKatalog />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/estimasi" element={<EstimasiPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
