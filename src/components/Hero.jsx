@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const stats = [
   { value: "3", label: "Brand premium" },
   { value: "50+", label: "Produk tersedia" },
@@ -53,8 +55,8 @@ export default function Hero() {
 
         {/* Actions */}
         <div className="flex gap-3 flex-wrap">
-          <a
-            href="/estimasi"
+          <Link
+            to="/estimasi"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] font-heading text-[15px] font-semibold bg-accent text-white no-underline transition-all duration-[250ms] hover:bg-[#009B62] hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,168,107,0.3)]"
           >
             Estimasi Biaya
@@ -70,7 +72,7 @@ export default function Hero() {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
           <a
             href="#brands"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] font-heading text-[15px] font-semibold text-white no-underline transition-all duration-[250ms] hover:bg-white/10"
