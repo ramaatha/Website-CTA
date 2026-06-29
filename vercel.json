@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && cp -r images dist/images && cp -r fonts dist/fonts && cp -r brands dist/brands && cp -r css dist/css && cp -r js dist/js",
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
