@@ -283,22 +283,6 @@ export default function ContactPage() {
                 </form>
               </div>
 
-              {/* Map placeholder */}
-              <div className="bg-surface border border-border rounded-[16px] overflow-hidden h-[200px] flex flex-col items-center justify-center gap-2 text-text-tertiary">
-                <svg
-                  className="w-8 h-8 stroke-border"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  strokeWidth="1.5"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <p className="text-[13px] font-medium">Google Maps</p>
-                <span className="text-[12px]">
-                  Ganti dengan iframe embed Google Maps
-                </span>
-              </div>
             </div>
           </div>
         </div>

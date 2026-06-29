@@ -219,6 +219,35 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Lokasi Section ── */}
+      <section className="bg-bg py-14 border-t border-border">
+        <div className="container">
+          <div className="mb-6">
+            <span className="inline-block text-[11px] font-heading font-bold uppercase tracking-[1.5px] text-accent mb-2">
+              Lokasi kami
+            </span>
+            <h2 className="font-heading text-[22px] font-extrabold text-text leading-tight">
+              Kantor PT Cipta Teknologi Aplikasi
+            </h2>
+            <p className="text-[14px] text-text-secondary mt-1">
+              Jl. T.B. Simatupang 11, Pasar Minggu, Jakarta Selatan 12560
+            </p>
+          </div>
+          <div className="rounded-[16px] overflow-hidden border border-border shadow-sm h-[380px] max-md:h-[280px]">
+            <iframe
+              src="https://maps.google.com/maps?q=Jl.+T.B.+Simatupang+11+Pasar+Minggu+Jakarta+Selatan+12560&output=embed&z=16&hl=id"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lokasi PT Cipta Teknologi Aplikasi"
+            />
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <FloatingWhatsApp />
     </>
