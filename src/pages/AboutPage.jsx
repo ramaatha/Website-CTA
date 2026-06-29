@@ -55,6 +55,7 @@ const companyInfo = [
 const brandPartners = [
   {
     initial: "D",
+    logo: "/images/brands/diversey.webp",
     label: "Diversey",
     href: "/diversey",
     bg: "bg-[#e8f1fa]",
@@ -62,6 +63,7 @@ const brandPartners = [
   },
   {
     initial: "G",
+    logo: "/images/brands/godrej.jpg",
     label: "Godrej",
     href: "/brands/godrej.html",
     bg: "bg-[#e6f7f0]",
@@ -69,6 +71,7 @@ const brandPartners = [
   },
   {
     initial: "P",
+    logo: null,
     label: "Prima",
     href: "/brands/prima.html",
     bg: "bg-[#fff3ed]",
@@ -203,9 +206,19 @@ export default function AboutPage() {
                       className="flex items-center gap-3 p-3 rounded-[10px] border border-border-light hover:border-border hover:bg-bg transition-all no-underline"
                     >
                       <div
-                        className={`w-9 h-9 rounded-[8px] flex items-center justify-center font-heading font-extrabold text-[14px] shrink-0 ${b.bg} ${b.text}`}
+                        className={`w-9 h-9 rounded-[8px] flex items-center justify-center shrink-0 overflow-hidden ${b.bg}`}
                       >
-                        {b.initial}
+                        {b.logo ? (
+                          <img
+                            src={b.logo}
+                            alt={b.label}
+                            className="w-full h-full object-contain p-1"
+                          />
+                        ) : (
+                          <span className={`font-heading font-extrabold text-[14px] ${b.text}`}>
+                            {b.initial}
+                          </span>
+                        )}
                       </div>
                       <span className="text-[14px] font-medium text-text">
                         {b.label}
