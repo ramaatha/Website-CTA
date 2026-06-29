@@ -55,7 +55,8 @@ export default function Footer() {
               industri.
             </p>
             <div className="text-sm text-white/70">
-              <div className="mb-1">Jl. T.B. Simatupang 11, Pasar Minggu</div>
+              <div className="mb-1">Cibis Nine Building Lt. 11</div>
+              <div className="mb-1">Jl. TB. Simatupang Kav. 2</div>
               <div>Jakarta Selatan 12560</div>
             </div>
           </div>

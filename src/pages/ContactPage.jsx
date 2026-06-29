@@ -62,7 +62,7 @@ const contactCards = [
       </>
     ),
     title: "Alamat Kantor",
-    desc: "Jl. T.B. Simatupang 11, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12560, Indonesia",
+    desc: "Cibis Nine Building Lt. 11, Jl. TB. Simatupang Kav. 2, Jakarta Selatan, DKI Jakarta 12560",
     link: null,
   },
 ];

@@ -39,7 +39,7 @@ const companyInfo = [
   { label: "Bidang", value: "General Supplier & Contractor" },
   {
     label: "Alamat",
-    value: "Jl. T.B. Simatupang 11, Pasar Minggu, Jakarta Selatan 12560",
+    value: "Cibis Nine Building Lt. 11, Jl. TB. Simatupang Kav. 2, Jakarta Selatan 12560",
   },
   {
     label: "Telepon",
@@ -230,12 +230,12 @@ export default function AboutPage() {
               Kantor PT Cipta Teknologi Aplikasi
             </h2>
             <p className="text-[14px] text-text-secondary mt-1">
-              Jl. T.B. Simatupang 11, Pasar Minggu, Jakarta Selatan 12560
+              Cibis Nine Building Lt. 11, Jl. TB. Simatupang Kav. 2, Jakarta Selatan 12560
             </p>
           </div>
           <div className="rounded-[16px] overflow-hidden border border-border shadow-sm h-[380px] max-md:h-[280px]">
             <iframe
-              src="https://maps.google.com/maps?q=Jl.+T.B.+Simatupang+11+Pasar+Minggu+Jakarta+Selatan+12560&output=embed&z=16&hl=id"
+              src="https://maps.google.com/maps?q=Cibis+Nine+Building+Jl+TB+Simatupang+Kav+2+Jakarta+Selatan+12560&output=embed&z=16&hl=id"
               width="100%"
               height="100%"
               style={{ border: 0 }}
